@@ -61,7 +61,7 @@ export const portfolioData: PortfolioData = {
       "Hi, I'm Ratnasothy Hariram, a web & software developer passionate about creating efficient and user-friendly web applications.",
     email: "rs11hari@gmail.com",
     phone: "+94 XX XXX XXXX",
-    profileImage: "./assets/hany.JPG",
+    profileImage: "./public/hany.JPG",
   },
 
   about: {
