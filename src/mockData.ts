@@ -87,29 +87,27 @@ export const portfolioData: PortfolioData = {
       title: "Motor Traffic Violation Fine Management System",
       description:
         "A comprehensive web application for managing traffic violations and fines. Features include violation recording, fine calculation, payment processing, and report generation.",
-      techStack: ["PHP", "Laravel", "MySQL", "Bootstrap", "JavaScript"],
-      image:
-        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=400&fit=crop",
+      techStack: ["PHP", "MySQL", "Bootstrap", "JavaScript", "JQuery"],
+      image: "./traffic.png",
       liveLink: "#",
       githubLink: "#",
     },
     {
       id: 2,
-      title: "E-Commerce Platform",
+      title: "ATM Dashboard and Management System",
       description:
-        "A full-featured online shopping platform with product catalog, shopping cart, payment integration, and order management system.",
-      techStack: ["React.js", "Node.js", "MongoDB", "Express", "Stripe"],
-      image:
-        "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
+        "A full-featured ATM management system that allows users to monitor ATM status, transaction history, and cash levels.",
+      techStack: ["React.js", "TypeScript", "Java-Servlets", "MySQL"],
+      image: "./atm.png",
       liveLink: "#",
       githubLink: "#",
     },
     {
       id: 3,
-      title: "Task Management Application",
+      title: "Dashboard Editor",
       description:
-        "A productivity tool for managing tasks and projects with real-time collaboration features, deadline tracking, and team communication.",
-      techStack: ["React.js", "TypeScript", "Firebase", "Material-UI"],
+        "A React.js-based dashboard editor that lets users edit the header, body, and footer inline. Changes are applied instantly without a page refresh (live preview), supporting drag-and-drop widgets and real-time state updates for a seamless editing experience.",
+      techStack: ["React.js"],
       image:
         "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
       liveLink: "#",
@@ -117,12 +115,10 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 4,
-      title: "Weather Forecast Dashboard",
-      description:
-        "An interactive weather application providing real-time weather data, forecasts, and historical weather patterns using external APIs.",
-      techStack: ["React.js", "JavaScript", "OpenWeather API", "Chart.js"],
-      image:
-        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+      title: "Currently Ongoing",
+      description: "",
+      techStack: [""],
+      image: "",
       liveLink: "#",
       githubLink: "#",
     },
