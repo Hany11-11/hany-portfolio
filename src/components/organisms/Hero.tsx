@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
                 <Mail className="w-5 h-5 text-slate-700 dark:text-slate-300" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/hany11-11"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full border-2 border-slate-300 dark:border-slate-700 hover:border-teal-500 dark:hover:border-teal-400 hover:bg-teal-50 dark:hover:bg-teal-900/20 transition-all duration-300 transform hover:scale-110"

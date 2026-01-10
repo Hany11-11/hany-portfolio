@@ -15,9 +15,18 @@ export type Education = {
   year: string;
 };
 
+export type Experience = {
+  title: string;
+  company: string;
+  location: string;
+  duration: string;
+  responsibilities: string[];
+};
+
 export type About = {
   description: string;
   education: Education;
+  experience: Experience[];
   interests: string[];
 };
 
@@ -61,7 +70,7 @@ export const portfolioData: PortfolioData = {
       "Hi, I'm Ratnasothy Hariram, a web & software developer passionate about creating efficient and user-friendly web applications.",
     email: "rs11hari@gmail.com",
     phone: "+94 XX XXX XXXX",
-    profileImage: "./hany.JPG",
+    profileImage: "/hany.JPG",
   },
 
   about: {
@@ -72,9 +81,27 @@ export const portfolioData: PortfolioData = {
       degree: "Bachelor of Information Technology",
       year: "2022 - 2025",
     },
+    experience: [
+      {
+        title: "Software Engineering Trainee",
+        company: "Samuel Gnanam IT Centre",
+        location: "Jaffna",
+        duration: "09/2025 – Present",
+        responsibilities: [
+          "Worked as part of a team-based training program to develop a Hotel Management System, with individual responsibility for assigned backend modules using Spring Boot",
+          "Designed and implemented RESTful APIs and business logic for Hotel management",
+          "Implemented data persistence using Spring Data JPA and Hibernate for efficient database operations",
+          "Developed and maintained relational database schemas (MySQL)",
+          "Integrated backend APIs with frontend components and ensured smooth processes",
+          "Used Git and GitHub for version control, collaboration, and pull request management",
+          "Performed API testing and debugging using Postman, and participated in code reviews to improve code quality and reliability",
+        ],
+      },
+    ],
     interests: [
-      "Building scalable web applications with React.js",
-      "Backend development using Laravel and PHP",
+      "Building scalable web applications with React with TypeScript",
+      "Backend development using Springboot",
+      "RestApi development and integration",
       "Database design and optimization",
       "Learning new technologies and frameworks",
       "Contributing to open-source projects",
@@ -88,7 +115,7 @@ export const portfolioData: PortfolioData = {
       description:
         "A comprehensive web application for managing traffic violations and fines. Features include violation recording, fine calculation, payment processing, and report generation.",
       techStack: ["PHP", "MySQL", "Bootstrap", "JavaScript", "JQuery"],
-      image: "./traffic.png",
+      image: "/traffic.png",
       liveLink: "#",
       githubLink: "#",
     },
@@ -97,8 +124,8 @@ export const portfolioData: PortfolioData = {
       title: "ATM Dashboard and Management System",
       description:
         "A full-featured ATM management system that allows users to monitor ATM status, transaction history, and cash levels.",
-      techStack: ["React.js", "TypeScript", "Java-Servlets", "MySQL"],
-      image: "./atm.png",
+      techStack: ["React.js", "TypeScript", "Springboot", "MySQL"],
+      image: "/atm.jpg",
       liveLink: "#",
       githubLink: "#",
     },
@@ -115,10 +142,11 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 4,
-      title: "Currently Ongoing",
-      description: "",
-      techStack: [""],
-      image: "",
+      title: "Hotel Management System",
+      description:
+        "Ongoing development of a Hotel Management System using Spring Boot.",
+      techStack: ["Spring Boot", "React", "MySQL"],
+      image: "hms.jpg",
       liveLink: "#",
       githubLink: "#",
     },
@@ -138,8 +166,12 @@ export const portfolioData: PortfolioData = {
   ],
 
   social: [
-    { name: "GitHub", url: "https://github.com", icon: "Github" },
-    { name: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" },
-    { name: "Twitter", url: "https://twitter.com", icon: "Twitter" },
+    { name: "GitHub", url: "https://github.com/hany11-11", icon: "Github" },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/hany02/",
+      icon: "Linkedin",
+    },
+    { name: "Twitter", url: "https://x.com/ItsHany_X", icon: "Twitter" },
   ],
 };
