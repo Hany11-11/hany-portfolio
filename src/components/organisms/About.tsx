@@ -1,6 +1,13 @@
 ﻿import React from "react";
-import { GraduationCap, Heart, Code } from "lucide-react";
+import {
+  GraduationCap,
+  Heart,
+  Code,
+  FileText,
+  ExternalLink,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/atoms/card";
+import { Button } from "@/components/atoms/button";
 import { portfolioData } from "@/mockData";
 
 const About: React.FC = () => {
@@ -33,9 +40,16 @@ const About: React.FC = () => {
                   My Story
                 </h3>
               </div>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                 {about.description}
               </p>
+              <a href={about.cv} target="_blank" rel="noopener noreferrer">
+                <Button className="bg-teal-500 hover:bg-teal-600 text-white gap-2">
+                  <FileText className="w-4 h-4" />
+                  View My CV
+                  <ExternalLink className="w-4 h-4" />
+                </Button>
+              </a>
             </CardContent>
           </Card>
 
@@ -95,4 +109,3 @@ const About: React.FC = () => {
 };
 
 export default About;
-

@@ -131,7 +131,7 @@ const Footer3D: React.FC = () => {
   };
 
   const navLinks = [
-    { name: "Home", href: "#hero" },
+    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
@@ -239,7 +239,6 @@ const Footer3D: React.FC = () => {
               <p className="text-slate-500 text-sm flex items-center gap-1">
                 © {currentYear} {personal.name}. Made with
                 <Heart className="w-4 h-4 text-red-500 fill-red-500 inline animate-pulse" />
-                using React & Three.js
               </p>
 
               <button

@@ -28,6 +28,7 @@ export type About = {
   education: Education;
   experience: Experience[];
   interests: string[];
+  cv: string;
 };
 
 export type Project = {
@@ -106,6 +107,7 @@ export const portfolioData: PortfolioData = {
       "Learning new technologies and frameworks",
       "Contributing to open-source projects",
     ],
+    cv: "/Hariram_CV.pdf",
   },
 
   projects: [

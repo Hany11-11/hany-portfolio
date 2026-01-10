@@ -7,8 +7,11 @@ import {
   Calendar,
   Briefcase,
   CheckCircle2,
+  FileText,
+  ExternalLink,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/atoms/card";
+import { Button } from "@/components/atoms/button";
 import { portfolioData } from "@/mockData";
 
 const About: React.FC = () => {
@@ -53,9 +56,16 @@ const About: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg mb-6">
                   {about.description}
                 </p>
+                <a href={about.cv} target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white gap-2 shadow-lg shadow-teal-500/30">
+                    <FileText className="w-4 h-4" />
+                    View My CV
+                    <ExternalLink className="w-4 h-4" />
+                  </Button>
+                </a>
               </CardContent>
             </Card>
 
