@@ -153,16 +153,16 @@ export const portfolioData: PortfolioData = {
   ],
 
   skills: [
-    { name: "HTML", icon: "Code2", level: 90 },
-    { name: "CSS", icon: "Palette", level: 85 },
-    { name: "JavaScript", icon: "FileJson", level: 88 },
-    { name: "TypeScript", icon: "FileCode", level: 80 },
-    { name: "PHP", icon: "Code", level: 85 },
-    { name: "MySQL", icon: "Database", level: 82 },
-    { name: "React.js", icon: "Atom", level: 90 },
-    { name: "Java", icon: "Coffee", level: 75 },
-    { name: "Spring Boot", icon: "Leaf", level: 70 },
-    { name: "Git", icon: "GitBranch", level: 85 },
+    { name: "HTML", icon: "Code2", level: 100 },
+    { name: "CSS", icon: "Palette", level: 100 },
+    { name: "JavaScript", icon: "FileJson", level: 100 },
+    { name: "TypeScript", icon: "FileCode", level: 100 },
+    { name: "PHP", icon: "Code", level: 100 },
+    { name: "MySQL", icon: "Database", level: 100 },
+    { name: "React.js", icon: "Atom", level: 100 },
+    { name: "Java", icon: "Coffee", level: 100 },
+    { name: "Spring Boot", icon: "Leaf", level: 100 },
+    { name: "Git", icon: "GitBranch", level: 100 },
   ],
 
   social: [
