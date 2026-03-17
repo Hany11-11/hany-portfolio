@@ -1,96 +1,68 @@
-import { useRef } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
-import { portfolioData } from '../data';
+import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
+import { portfolioData } from "../data";
 
-function ProjectCard({ project, index }: { project: any, index: number }) {
-  const ref = useRef<HTMLDivElement>(null);
+type Project = (typeof portfolioData.projects)[number];
 
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = ref.current?.getBoundingClientRect();
-    if (rect) {
-      const width = rect.width;
-      const height = rect.height;
-      const mouseX = e.clientX - rect.left;
-      const mouseY = e.clientY - rect.top;
-      const xPct = mouseX / width - 0.5;
-      const yPct = mouseY / height - 0.5;
-      x.set(xPct);
-      y.set(yPct);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-      }}
-      className="group relative glass-card overflow-hidden hover:bg-white/10"
+      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-400/30 hover:bg-white/10"
     >
-      <div style={{ transform: "translateZ(50px)" }} className="relative h-64 mb-6 rounded-xl overflow-hidden group-hover:shadow-2xl transition-all duration-500">
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent z-10 opacity-80" />
-        
+      <div className="relative h-36 mb-3 rounded-xl overflow-hidden">
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-900/20 to-transparent z-10" />
+
         {project.image ? (
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
           />
         ) : (
           <>
-            <div className={`w-full h-full bg-gradient-to-br from-indigo-500/20 via-purple-500/20 to-pink-500/20 group-hover:scale-105 transition-transform duration-500 ease-out`} />
-            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
+            <div className="w-full h-full bg-linear-to-br from-indigo-500/20 via-cyan-500/20 to-emerald-500/20" />
+            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
           </>
         )}
-        
-        <div className="absolute bottom-4 left-4 z-20">
-          <div className="flex flex-wrap gap-2">
+
+        <div className="absolute bottom-2 left-2 right-2 z-20">
+          <div className="flex flex-wrap gap-1">
             {project.tech.map((t: string) => (
-              <span key={t} className="text-[10px] font-bold uppercase tracking-wider bg-indigo-500/20 backdrop-blur-md border border-indigo-500/30 px-2 py-1 rounded-md text-indigo-100 shadow-sm">
+              <span
+                key={t}
+                className="text-[9px] font-semibold uppercase tracking-wide bg-slate-950/60 backdrop-blur border border-white/15 px-1.5 py-0.5 rounded text-slate-200"
+              >
                 {t}
               </span>
             ))}
           </div>
         </div>
       </div>
-      
-      <div style={{ transform: "translateZ(20px)" }}>
-        <h3 className="text-2xl font-bold mb-3 group-hover:text-indigo-400 transition-colors">
+
+      <div>
+        <h3 className="text-base sm:text-lg font-semibold mb-1.5 group-hover:text-indigo-300 transition-colors line-clamp-1">
           {project.title}
         </h3>
-        <p className="text-slate-400 mb-6 line-clamp-2">
+        <p className="text-xs sm:text-sm text-slate-400 mb-3 line-clamp-2 min-h-10">
           {project.description}
         </p>
-        
-        <div className="flex items-center gap-4">
-          <a href={project.link} className="flex items-center gap-2 text-sm font-medium text-white hover:text-indigo-400 transition-colors">
-            <ExternalLink size={16} /> Live Demo
+
+        <div className="flex items-center gap-3">
+          <a
+            href={project.link}
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-white hover:text-indigo-300 transition-colors"
+          >
+            <ExternalLink size={14} /> Live Demo
           </a>
-          <a href="#" className="flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white transition-colors">
-            <Github size={16} /> Code
+          <a
+            href="#"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors"
+          >
+            <Github size={14} /> Code
           </a>
         </div>
       </div>
@@ -100,9 +72,9 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 relative overflow-hidden perspective-1000">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center mb-16 text-center">
+    <section id="projects" className="py-18 relative overflow-hidden">
+      <div className="container mx-auto px-5 sm:px-6">
+        <div className="flex flex-col items-center mb-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -111,27 +83,28 @@ export default function Projects() {
           >
             My Work
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-3xl md:text-4xl font-bold mb-3"
           >
             Featured <span className="text-gradient">Projects</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-400 max-w-2xl"
+            className="text-sm text-slate-400 max-w-2xl"
           >
-            A collection of projects that showcase my skills in full-stack development.
+            A collection of projects that showcase my skills in full-stack
+            development.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
           {portfolioData.projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
