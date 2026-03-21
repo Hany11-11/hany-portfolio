@@ -67,6 +67,14 @@ export const portfolioData = {
       link: "https://bit-gpa-calc.vercel.app/",
       image: "/gpa.jpg",
     },
+    {
+      title: "Leave Management System",
+      description:
+        "Web application to manage employee leave requests, approvals, balances, and leave history with role-based access.",
+      tech: ["Go", "React", "TypeScript", "Postgress"],
+      link: "https://github.com/Hany11-11/leave_management",
+      image: "/lms.jpg",
+    },
   ],
   skills: [
     {
