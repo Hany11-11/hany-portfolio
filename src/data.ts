@@ -75,6 +75,14 @@ export const portfolioData = {
       link: "https://github.com/Hany11-11/leave_management",
       image: "/lms.jpg",
     },
+    {
+      title: "Travels Website",
+      description:
+        "A website for a travel agency that allows users to book via WhatsApp.",
+      tech: ["React.js", "TypeScript"],
+      link: "#",
+      image: "/travels.jpg",
+    },
   ],
   skills: [
     {
