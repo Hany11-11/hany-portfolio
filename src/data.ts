@@ -80,7 +80,7 @@ export const portfolioData = {
       description:
         "A website for a travel agency that allows users to book via WhatsApp.",
       tech: ["React.js", "TypeScript"],
-      link: "#",
+      link: "https://thanshvi-travels.vercel.app/",
       image: "/travels.jpg",
     },
   ],
